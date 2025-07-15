@@ -1,13 +1,14 @@
 import React from "react";
 import Product from "./Product";
+import "./product.css";
+import products1 from "../data/products";
 
-const ProductList = ({ name, price }) => {
+const ProductList = () => {
   return (
-    <div>
-      <Product name="compiter" price="200"></Product>
-      <Product name="laptop" price="400"></Product>
-      <Product name="tablet" price="100"></Product>
-      <Product name="smartPhone" price="50"></Product>
+    <div className="producrs">
+      {products1.map((product, index) => (
+        <Product key={index} product={product}></Product>
+      ))}
     </div>
   );
 };
